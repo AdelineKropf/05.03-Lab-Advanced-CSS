@@ -1,29 +1,107 @@
-h1{
-  border-color: #d3e644;
-  border-style: dashed;
+body {
+  font-family: Roboto, Helvetica, sans-serif;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
+#topHeading {
+  font-size: 16px;
+  color: #444444;
 }
 
-th, td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+/* actives the changes animation when the topHeading is hovered over */
+#topHeading:hover {
+  animation-name: changes;
+  animation-delay: 1s; /* animation waits 1 second before starting */
+  animation-duration: 7s; /* animation takes a total of 15 seconds to complete */
 }
 
-th {
-  background-color: #f2f2f2;
+/* changes the background color to dark red and the text color to white and then returns the background color to white and the text color to black */
+@keyframes changes {
+  /* start */
+  0% { 
+    background-color: #ffffff;
+    color: black;
+  }
+  /* middle */
+  50% { 
+    background-color: #b81919aa;
+    color: white;
+  }
+  /* end */
+  100% { 
+    background-color: #ffffff; 
+    color: black;
+  }
+}
+
+.container {
+  text-align: center;
+  margin: 5px;
+  font-size: 13px;
+}
+
+.offer {
+  display: inline-block;
+  width: 400px;
+  margin: 4px;
+  text-align: center;
+  border: 1px solid #cccccc
+}
+
+/* actives the rotation animation for an offer when it is being hovered over */
+.offer:hover {
+  animation-name: rotation;
+  animation-delay: 1s; /* animation waits 1 second before starting */
+  animation-duration: 15s; /* animation takes a total of 15 seconds to complete */
+}
+
+/* rotates the offer 360 degrees */
+@keyframes rotation {
+  /* start */
+  0% { transform: rotate(0); } 
+  /* end */
+  100% { transform: rotate(360deg); }
+}
+
+.offer-title {
+  font-size: 14px;
   font-weight: bold;
+  color: #ffffff;
+  background-color: #00b3b3;
+  margin: 0px;
+  padding: 15px;
 }
 
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+.offer-contents {
+  padding: 20px;
+  background-color: #fafafa;
 }
 
-tbody tr:hover {
-  background-color: #e9e9e9;
+table { 
+  width: 100%; 
+  background-color: #ffffff; 
+  border-spacing: 0px; 
+}
+
+th { 
+  font-size: 12px; 
+  font-weight: bold; 
+  color: #777777; 
+  padding: 10px; 
+  margin: 0; 
+  text-align: left; 
+  border-bottom: 1px solid #f1f1f1;
+}
+
+td { 
+  font-weight: lighter; 
+  color: #444444; 
+  padding: 20px 10px; 
+  margin: 0; 
+  text-align: left; 
+  border-bottom: 1px solid #f1f1f1; 
+}
+
+.final-value {
+  font-weight: bold;
+  color: #2222ff;
 }
